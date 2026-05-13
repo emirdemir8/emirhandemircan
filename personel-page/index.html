@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Full-stack web portfolio for Emirhan Demircan, built with HTML5, CSS3, JavaScript, PHP, and MySQL.">
+  <title>Emirhan Demircan | Full-Stack Web Portfolio</title>
+  <link rel="shortcut icon" href="./assets/images/profile-portfolio.svg">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+  <header class="header" data-header>
+    <div class="container header-container">
+      <a href="#home" class="brand" aria-label="Go to home">
+        <span class="brand-mark">ED</span>
+        <span class="logo">Emirhan Demircan</span>
+      </a>
+
+      <button class="nav-toggle-btn" type="button" aria-label="Toggle menu" aria-expanded="false" data-nav-toggle-btn>
+        <ion-icon name="menu-outline" class="menu-icon" aria-hidden="true"></ion-icon>
+        <ion-icon name="close-outline" class="close-icon" aria-hidden="true"></ion-icon>
+      </button>
+
+      <nav class="navbar" aria-label="Main navigation">
+        <ul class="navbar-list">
+          <li><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="#about" class="navbar-link" data-nav-link>About</a></li>
+          <li><a href="#projects" class="navbar-link" data-nav-link>Projects</a></li>
+          <li><a href="#skills" class="navbar-link" data-nav-link>Skills</a></li>
+          <li><a href="#requirements" class="navbar-link" data-nav-link>Checklist</a></li>
+          <li><a href="#contact" class="navbar-link" data-nav-link>Contact</a></li>
+          <li><a href="./admin/login.php" class="btn btn-secondary">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="section-subtitle">Full-Stack Web Portfolio</p>
+          <h1 class="hero-title" id="hero-title">A career-ready portfolio built with HTML, CSS, JavaScript, PHP, and MySQL.</h1>
+          <p class="hero-text">
+            This portfolio presents my academic work as a professional web application: responsive UI, AJAX powered
+            project data, client-side validation, a MySQL contact pipeline, and a session-based admin dashboard.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+          <ul class="hero-stats" aria-label="Portfolio highlights">
+            <li><strong>5</strong><span>Core technologies</span></li>
+            <li><strong>AJAX</strong><span>Dynamic project loading</span></li>
+            <li><strong>MySQL</strong><span>Persistent messages</span></li>
+          </ul>
+        </div>
+
+        <aside class="hero-card" aria-label="Project identity card">
+          <img src="./assets/images/profile-portfolio.svg" width="240" height="240" alt="Portfolio illustration" class="hero-avatar">
+          <div>
+            <p class="eyebrow">Student Developer</p>
+            <h2>Emirhan Demircan</h2>
+            <p>Haliç University student focused on practical, employer-facing full-stack web development.</p>
+          </div>
+          <div class="tech-cloud" aria-label="Technologies used">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>PHP</span>
+            <span>MySQL</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <figure class="about-visual">
+          <div class="code-window" aria-label="Portfolio architecture preview">
+            <div class="window-dots"><span></span><span></span><span></span></div>
+            <pre><code>fetch('/api/projects.php')
+  .then(response => response.json())
+  .then(renderProjects);
+
+session_start();
+validate_contact_form();
+save_to_mysql();</code></pre>
+          </div>
+        </figure>
+
+        <div class="about-content">
+          <p class="section-subtitle">About this project</p>
+          <h2 class="h2 section-title" id="about-title">Designed as a professional asset, not only a homework page.</h2>
+          <p class="section-text">
+            The page explains who I am, shows selected projects, and demonstrates the semester technologies in one
+            cohesive product. It uses semantic sections, accessible navigation, responsive layouts, and a consistent
+            visual identity.
+          </p>
+          <p class="section-text">
+            The backend files in this folder add database-backed projects, contact management, and a protected admin
+            dashboard where portfolio items can be maintained after login.
+          </p>
+          <div class="about-actions">
+            <a href="./README.md" class="btn btn-primary blue">Read Project Report</a>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+              <ion-icon name="moon-outline" aria-hidden="true"></ion-icon>
+              <span>Theme</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <p class="section-subtitle">Dynamic Content</p>
+        <h2 class="h2 section-title" id="projects-title">Projects loaded with AJAX</h2>
+        <p class="section-text narrow">
+          These cards are requested from the PHP/MySQL API. If the database is not configured yet, JavaScript displays
+          seeded examples so the page remains reviewable while the SQL export is being imported.
+        </p>
+
+        <div class="filter-bar" role="group" aria-label="Project filters">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="frontend">Frontend</button>
+          <button type="button" class="filter-btn" data-filter="javascript">JavaScript</button>
+          <button type="button" class="filter-btn" data-filter="fullstack">Full Stack</button>
+        </div>
+
+        <div class="project-status" data-project-status role="status" aria-live="polite">Loading projects...</div>
+        <ul class="portfolio-list" data-project-list></ul>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="section-subtitle">Technical Stack</p>
+        <h2 class="h2 section-title" id="skills-title">Skills demonstrated in this portfolio</h2>
+        <p class="section-text narrow">
+          The progress bars represent the technologies used in this project and the areas I am continuing to improve.
+        </p>
+
+        <ul class="skills-list">
+          <li class="skills-item">
+            <div class="wrapper"><h3 class="skills-title">HTML5 Semantics</h3><data class="skills-data" value="85">85%</data></div>
+            <div class="skills-progress-box"><div class="skills-progress" style="width: 85%"></div></div>
+          </li>
+          <li class="skills-item">
+            <div class="wrapper"><h3 class="skills-title">CSS3 Responsive Layouts</h3><data class="skills-data" value="80">80%</data></div>
+            <div class="skills-progress-box"><div class="skills-progress" style="width: 80%"></div></div>
+          </li>
+          <li class="skills-item">
+            <div class="wrapper"><h3 class="skills-title">JavaScript & DOM</h3><data class="skills-data" value="75">75%</data></div>
+            <div class="skills-progress-box"><div class="skills-progress" style="width: 75%"></div></div>
+          </li>
+          <li class="skills-item">
+            <div class="wrapper"><h3 class="skills-title">PHP & Sessions</h3><data class="skills-data" value="70">70%</data></div>
+            <div class="skills-progress-box"><div class="skills-progress" style="width: 70%"></div></div>
+          </li>
+          <li class="skills-item">
+            <div class="wrapper"><h3 class="skills-title">MySQL Data Design</h3><data class="skills-data" value="70">70%</data></div>
+            <div class="skills-progress-box"><div class="skills-progress" style="width: 70%"></div></div>
+          </li>
+          <li class="skills-item">
+            <div class="wrapper"><h3 class="skills-title">AJAX Integration</h3><data class="skills-data" value="78">78%</data></div>
+            <div class="skills-progress-box"><div class="skills-progress" style="width: 78%"></div></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section requirements" id="requirements" aria-labelledby="requirements-title">
+      <div class="container">
+        <p class="section-subtitle">Submission Readiness</p>
+        <h2 class="h2 section-title" id="requirements-title">Final project checklist</h2>
+        <div class="table-wrap">
+          <table class="requirements-table">
+            <caption>Mandatory technical and submission items covered by this folder</caption>
+            <thead>
+              <tr>
+                <th scope="col">Requirement</th>
+                <th scope="col">Implementation</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Semantic HTML, table, forms</td><td>Structured sections, this checklist table, contact/admin forms</td><td>Ready</td></tr>
+              <tr><td>Responsive CSS</td><td>Grid, Flexbox, reusable variables, mobile navigation</td><td>Ready</td></tr>
+              <tr><td>JavaScript/DOM</td><td>Menu, dark mode cookie, filtering, AJAX rendering, validation</td><td>Ready</td></tr>
+              <tr><td>PHP/MySQL</td><td>Contact API, projects API, admin dashboard, SQL export</td><td>Ready after DB import</td></tr>
+              <tr><td>Submission package</td><td>Source code, README report, SQL file, GitHub/live demo placeholders</td><td>Documented</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-heading">
+            <p class="card-subtitle">Contact Management</p>
+            <h2 class="h2 section-title" id="contact-title">Send a message</h2>
+            <p>Messages are validated in JavaScript and submitted asynchronously to PHP, where they are saved in MySQL.</p>
+          </div>
+
+          <div class="wrapper">
+            <form action="./api/contact.php" method="post" class="contact-form" data-contact-form novalidate>
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Your name" required minlength="2" class="contact-input" data-field="name">
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="your.email@example.com" required class="contact-input" data-field="email">
+              </label>
+              <label>
+                <span>Message</span>
+                <textarea name="message" placeholder="Write your message..." required minlength="10" class="contact-input" data-field="message"></textarea>
+              </label>
+              <p class="form-message" data-form-message role="status" aria-live="polite"></p>
+              <button type="submit" class="btn-submit">Submit Message</button>
+            </form>
+
+            <ul class="contact-list">
+              <li class="contact-item">
+                <div class="contact-icon"><ion-icon name="location" aria-hidden="true"></ion-icon></div>
+                <div><h3 class="contact-item-title">Address</h3><address class="contact-item-link">Istanbul, Turkey</address></div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon"><ion-icon name="mail" aria-hidden="true"></ion-icon></div>
+                <div><h3 class="contact-item-title">Email</h3><a href="mailto:emirhandemircan546@hotmail.com" class="contact-item-link">emirhandemircan546@hotmail.com</a></div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon"><ion-icon name="logo-github" aria-hidden="true"></ion-icon></div>
+                <div><h3 class="contact-item-title">Repository</h3><a href="#" class="contact-item-link">Add public GitHub link before submission</a></div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon"><ion-icon name="globe-outline" aria-hidden="true"></ion-icon></div>
+                <div><h3 class="contact-item-title">Live Demo</h3><a href="#" class="contact-item-link">Add hosted demo URL before LMS upload</a></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <p>&copy; 2026 Emirhan Demircan. Built for the Full-Stack Web Portfolio final project.</p>
+      <a href="#top" class="back-to-top" data-back-to-top>Back top</a>
+    </div>
+  </footer>
+
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
